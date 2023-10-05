@@ -18,6 +18,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 header .logo {
@@ -32,6 +33,7 @@ header .logo {
 header ul {
     display: flex;
     gap: 40px;
+    transition: 0.5s ease;
 }
 
 header ul li {
@@ -62,6 +64,10 @@ section {
 
 section .content {
     max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: flex-start;
 }
 
 section .content h2 {
@@ -89,6 +95,13 @@ section .content .btn {
     letter-spacing: 0.2em;
     margin-top: 25px;
     display: inline-block;
+    width: 200px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+section .content .btn:hover {
+    background: #0F0;
 }
 
 section .container {
@@ -109,4 +122,43 @@ section .container .element {
     height: 40px;
     background: #FFF;
     scale: 0.75;
+}
+
+/* Sticky Nav */
+
+header.sticky {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(25px);
+}
+
+header.sticky .logo {
+    color: #0F0;
+}
+
+header.sticky ul li a {
+    color: #FFF;
+}
+
+header.sticky ul li a:hover {
+    color: #0F0;
+}
+
+
+@media (max-width: 1050px) {
+    header {
+        padding: 20px 25px;
+    }
+
+    section {
+        padding: 125px 25px 25px 25px;
+        flex-direction: column;
+    }
+
+    section .container {
+        margin-top: 50px;
+    }
+
+    header ul {
+        gap: 20px;
+    }
 }

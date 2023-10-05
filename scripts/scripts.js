@@ -1,4 +1,6 @@
 let container = document.querySelector(".container");
+let header = document.querySelector("header");
+
 for (let i = 1; i <= 100; i++) {
     let dot = document.createElement("div");
     dot.classList.add("element");
@@ -45,3 +47,11 @@ animation
 .add({
     rotateZ : -90 ,
 })
+
+window.onscroll = () => {
+    if(document.documentElement.scrollTop > 20) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
